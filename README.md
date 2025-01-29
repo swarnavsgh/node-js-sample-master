@@ -1,44 +1,73 @@
-### This repository is no longer maintained!
+# Node Hello World
 
-**For the most up to date test app to get you started on Heroku, head on over to [`node-js-getting-started`](https://github.com/heroku/node-js-getting-started).**
+Simple node.js app that servers "A Monk in Cloud"
 
----
+Great for testing simple deployments on Cloud
 
-# node-js-sample
+## Step 1: Install NodeJS and NPM using nvm
+Install node version manager (nvm) by typing the following at the command line.
+sudo yum install curl -y
+```bash
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+Activate nvm by typing the following at the command line.
 
-## Running Locally
+```bash
+source ~/.bash_profile
+```
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+Use nvm to install the latest version of Node.js by typing the following at the command line.
 
-```sh
-git clone git@github.com:heroku/node-js-sample.git # or clone your own fork
-cd node-js-sample
+```bash
+nvm install node
+```
+
+Test that node and npm are installed and running correctly by typing the following at the terminal:
+
+```bash
+node -v
+npm -v
+```
+
+## Step 2: Install Git and clone repository from GitHub
+To install git, run below commands in the terminal window:
+
+```bash
+
+yum install git -y
+```
+
+Just to verify if system has git installed or not, please run below command in terminal:
+```bash
+git — version
+```
+
+This command will print the git version in the terminal.
+
+Run below command to clone the code repository from Github:
+
+```bash
+git clone https://github.com/CloudTechDevOps/sample_nodejs_on_Ec2.git
+```
+
+Get inside the directory and Install Packages
+
+```bash
+cd nodejs-on-ec2
 npm install
+```
+
+Start the application
+To start the application, run the below command in the terminal:
+
+```bash
 npm start
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+or if we want to run application into process manager pm2
+```bash
+npm install -g pm2
+pm2 start index.js --name node-app
 
-## Deploying to Heroku
 
-```
-heroku create
-git push heroku master
-heroku open
-```
-
-Alternatively, you can deploy your own copy of the app using the web-based flow:
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
